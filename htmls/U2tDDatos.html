@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>Diccionario de Datos</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="stylesheet" href="../dist/reveal.css">
+	<link rel="stylesheet" href="../dist/theme/serif.css" id="theme">
+	<style type="text/css" media="screen">
+		.slides section.has-dark-background,
+		.slides section.has-dark-background h2 {
+			color: #fff;
+		}
+
+		.slides section.has-light-background,
+		.slides section.has-light-background h2 {
+			color: #222;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="reveal">
+
+		<div class="slides">
+
+			<section data-background="#00ffff">
+				<h2>Diccionario de Datos</h2>
+			</section>
+
+			<section data-background="#bb00bb">
+				<div>
+					<p>
+						Para poder hacer un uso correcto de los datos, es necesario
+						disponer de una buena documentación, a través de un diccionario de datos.
+					</p>
+				</div>
+			</section>
+
+			<section data-background-color="lightblue">
+				<div>
+					<p>¿Qué es un diccionario de datos?</p>
+					<p>
+						Un diccionario de datos <strong>es un repositorio único</strong> para todo el proyecto
+						de desarrollo del nuevo sistema, nos ayuda a conceptualizar el sistema
+						y la forma, en que, éste necesitará trabajar.
+					</p>
+				</div>
+			</section>
+
+			<section>
+				<h2>Diccionario de Datos</h2>
+				<section data-background="#ff0000">
+					<div>
+						<p>
+							Nos permite validar los requerimientos que están documentados en <strong>casos de
+								uso</strong>,
+							es el punto inicial para el diseño de <strong>bosquejos de interfaces de usuario</strong>,
+							permite determinar el contenido de las <strong>clases del modelo del dominio</strong>.
+
+						</p>
+					</div>
+				</section>
+				<section data-background="#001122">
+
+					<div>
+						<p>
+							El Diccionario de datos proporciona <strong>metadatos</strong> sobre los datos que explican
+							el
+							significado de todos y cada uno de los campos, los tipos de datos del campo, los valores de
+							muestra, entre otros.
+							Los diccionarios de datos desempeñan un papel importante en la <strong>comprensión de los
+								datos</strong> antes de profundizar en ellos, es útil para iniciar con el modelado, es
+							muy
+							importante para comprender los datos y su definición en el contexto del problema.
+
+						</p>
+					</div>
+				</section>
+				<section data-background="rgba(0, 0, 0, 0.2)">
+					<div>
+						<p>Proporcionan una notación formal de contenido como:
+						<ol>
+							<li>Flujos de entrada y salida</li>
+							<li>Estructuras de datos</li>
+							<li>Interacción entre los actores y el sistema</li>
+							<li>Intercambio de información </li>
+						</ol>
+						</p>
+					</div>
+				</section>
+				<section data-background="salmon">
+					<div>
+						<p>
+							Es frecuente confundir el significado del diccionario de datos
+							con el significado de glosario de negocio o con el de vocabulario
+							de datos, sin embargo, son conceptos distintos.
+						</p>
+					</div>
+				</section>
+			</section>
+
+			<section data-background="rgba(0, 100, 100, 0.2)">
+				<h2>Diccionario de Datos</h2>
+				<section>
+					<div>
+						<p>
+						<ol>
+							<li>Un diccionario de datos trata de documentar los metadatos
+								más ligados a su almacenamiento en la base de datos.</li>
+							<li>Es decir, incluye aspectos técnicos como
+								el tipo de dato, formato, longitud,
+								posibles valores que puede tomar e, incluso,
+								transformaciones sufridas, sin olvidar la definición de cada campo.</li>
+							<li>Estos metadatos ayudan a los usuarios a entender los
+								datos desde el punto de vista técnico para poder explotarlos adecuadamente.</li>
+						</ol>
+						</p>
+					</div>
+				</section>
+				<section>
+					<div>
+						<p>
+							Los diccionarios de datos nos permiten entender e interpretar un
+							conjunto de datos o base de datos al proporcionar información básica
+							sobre los campos o variables que contiene.
+						</p>
+					</div>
+				</section>
+				<section data-background="rgb(66, 66, 66)">
+					<div>
+						<p>Brindan la siguiente información:</p>
+						<ul>
+							<li>Qué significa cada campo o variable.</li>
+							<li>Qué tipo de datos contiene.</li>
+							<li>Qué valores puede tomar, o si usa algún catálogo.</li>
+							<li>Si contiene información pública, confidencial, o reservada.</li>
+						</ul>
+					</div>
+				</section>
+			</section>
+
+			<section data-background-transition="slide" data-background="assets/image1.png">
+				<div>
+					<p>Los diccionarios de datos se deben aplicar cuando se desarrolla una base de datos o una
+						aplicación ya que la información que ellos proveen es de gran ayuda en el proceso de desarrollo:
+					<ol>
+						<li>Coordinan la actividad de la base de datos – en los objetos de entrada de datos- (DEO).</li>
+						<li>Proveen a una aplicación los servicios de validación y actualización de la base de datos</li>
+					</ol>
+					</p>
+				</div>
+			</section>
+
+			<section>
+				Elementos Del Diccionario De Datos.
+				<section data-background-transition="slide" data-background="assets/image1.png">
+					<div>
+						<ul>
+							<li>Datos Elementales. </li>
+							<p>
+								Es la parte más pequeña de los datos que tiene significado en el
+								sistema de información, pero al combinarlos con varios elementos de datos
+								se puede obtener una estructura de datos que provea la información
+								completa que se desea consultar.
+							</p>
+
+						</ul>
+
+					</div>
+
+
+
+				</section>
+				<section data-background-transition="slide" data-background="assets/image1.png">
+					<div>
+						<ul>
+							<li>Por ejemplo:</li>
+							<p>
+								El campo nombre, por si solo no representa nada, pero cuando se relaciona
+								con su número de cedula o algunos otros atributos se tendrá una
+								estructura de datos acerca de esa persona.
+							</p>
+						</ul>
+					</div>
+				</section>
+			</section>
+
+			<section data-background="assets/image2.png" data-background-size="100px" data-background-repeat="repeat"
+				data-background-color="#111">
+				<h2>Nombre de los Datos.</h2>
+				<pre>Se usan para distinguir un dato de otro se les asignan nombres significativos a 
+los objetos en las bases de datos para tener un mayor control de la información.</pre>
+			</section>
+
+			<section data-background="#888888">
+				<h2>Descripción de los Datos.</h2>
+				<div>
+					<p>
+						Establece brevemente lo que representa el dato en el sistema; por ejemplo, la descripción para
+						FECHA-DE-FACTURA indica que es la fecha en la cual se está preparando la misma para distinguirla
+						de la fecha en la que se envió por correo o se recibió. Las descripciones de datos se deben
+						escribir suponiendo que a gente que los lea no conoce nada en relación del sistema.
+					</p>
+				</div>
+			</section>
+			<section data-background="#888888">
+				<h2>Alias</h2>
+				<pre>
+Son los distintos nombres que puede recibir un dato dependiendo 
+de quien y cual sea el uso que se le va a dar a dicho dato.
+				</pre>
+			</section>
+			<section data-background="#417203">
+				<h2>Longitud de campo</h2>
+				<div>
+					<p>
+						Es la cantidad de espacio que ocupa un dato en bytes.
+					</p>
+				</div>
+			</section>
+			<!--
+				<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm">
+					<h2>Longitud de campo</h2>
+					<p>
+						Es la cantidad de espacio que ocupa un dato en bytes.
+					</p>
+				</section>
+
+				<section data-background-iframe="https://slides.com/news/make-better-presentations/embed?style=hidden&autoSlide=4000">
+					<h2>Iframe background</h2>
+				</section>
+-->
+			<section>
+
+				<!--
+					<section data-background="#417203">
+						<h2>Same background twice vertical (2/2)</h2>
+					</section>
+					-->
+				<h2>Ejemplo:</h2>
+
+				<section data-background="#934f4d">
+					<img src="../assets/myimg/u2/DDatos/1.gif" alt="ejemplo1">
+				</section>
+
+				<section data-background="#934f4d">
+					<img src="../assets/myimg/u2/DDatos/21.gif" alt="ejemplo2">
+				</section>
+				<section data-background="#934f4d">
+					<img src="../assets/myimg/u2/DDatos/33.gif" alt="">
+				</section>
+
+			</section>
+			<section>
+				<h2>Unidad 3</h2>
+				<img src="../assets/myimg/Construccion.gif" alt="construccion" width="300px">
+			</section>
+		</div>
+
+	</div>
+
+	<script src="../dist/reveal.js"></script>
+	<script>
+
+		// Full list of configuration options:
+		// https://revealjs.revealjs.com/config/
+		Reveal.initialize({
+			center: true,
+
+			transition: 'linear',
+			// transitionSpeed: 'slow',
+			// backgroundTransition: 'slide'
+		});
+
+	</script>
+
+</body>
+
+</html>
