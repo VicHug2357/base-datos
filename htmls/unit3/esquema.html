@@ -1,0 +1,649 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Esquema lógico</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+
+    <link rel="stylesheet" href="../../dist/reset.css">
+    <link rel="stylesheet" href="../../dist/reveal.css">
+    <link rel="stylesheet" href="../../dist/theme/black.css" id="theme">
+    <link rel="stylesheet" href="../../plugin/highlight/monokai.css">
+</head>
+
+<body>
+
+    <div class="reveal">
+
+        <div class="slides">
+
+            <section>
+                <h1>Esquema lógico</h1>
+            </section>
+
+            <section>
+                <ul>
+                    <li>El diseño lógico es el proceso de construir un esquema de la información
+                        que utiliza la empresa, basándose en un modelo de base de datos específico e
+                        independiente del SGBD</li>
+                    <li>
+
+                        El objetivo del diseño lógico es obtener una representación, del modo más eficiente
+                        posible, los recursos que el SGBD para estructurar los datos y modelar las restricciones
+                    </li>
+                    <li>
+                        En esta etapa, se transforma el esquema conceptual obtenido en la etapa
+                        anterior del diseño, en un esquema lógico que utilizará las estructuras de datos
+                    </li>
+
+                </ul>
+            </section>
+
+
+            <section data-background="indigo">
+                <h2>Los modelos de bases de datos más extendidos son:</h2>
+                <ul>
+                    <li class="fragment fade-left">Modelo relacional</li>
+                    <li class="fragment fade-left">Modelo de red</li>
+                    <li class="fragment fade-left">Modelo jerárquico</li>
+                </ul>
+            </section>
+            <section data-background-color="#fff">
+                <ul>
+                    <li>El esquema lógico es una fuente de información para el diseño físico</li>
+                    <li>Tanto el diseño conceptual, como el diseño lógico, son procesos iterativos,
+                        tienen un punto de inicio y se van refinando continuamente.</li>
+                    <li>Es fundamental dedicar el tiempo y las energías necesarias
+                        para producir el mejor esquema posible.</li>
+                </ul>
+
+            </section>
+            <section>
+                <p>
+                    No se debe olvidar que, si en durante la etapa del diseño lógico se detecta
+                    alguna carencia o error en la etapa anterior (diseño conceptual), se debe
+                    subsanar dicho error en el esquema conceptual, y se debe generar una nueva
+                    versión de la documentación que se ha producido en dicha etapa.
+                </p>
+            </section>
+            <section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+                <h3>Normalización</h3>
+                <div>
+                    <p>
+                        La normalización es una técnica para diseñar la estructura lógica de los
+                        datos de un sistema de información en el modelo relacional, desarrollada por
+                        E. F. Codd en 1972.
+                    </p>
+                </div>
+                <div class="r-hstack justify-center">
+                    <div data-id="box1"
+                        style="background: #999; width: 50px; height: 50px; margin: 10px; border-radius: 5px;"></div>
+                    <div data-id="box2"
+                        style="background: #999; width: 50px; height: 50px; margin: 10px; border-radius: 5px;"></div>
+                    <div data-id="box3"
+                        style="background: #999; width: 50px; height: 50px; margin: 10px; border-radius: 5px;"></div>
+                </div>
+            </section>
+            <section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+                <div class="r-hstack justify-center">
+                    <div data-id="box1" data-auto-animate-delay="0"
+                        style="background: cyan; width: 150px; height: 100px; margin: 10px;"></div>
+                    <div data-id="box2" data-auto-animate-delay="0.1"
+                        style="background: magenta; width: 150px; height: 100px; margin: 10px;"></div>
+                    <div data-id="box3" data-auto-animate-delay="0.2"
+                        style="background: yellow; width: 150px; height: 100px; margin: 10px;"></div>
+                </div>
+                <div>
+                    <p>
+                        Es una estrategia de diseño que parte de
+                        los atributos y éstos se van agrupando en tablas. </p>
+                    <p> No se
+                        utiliza la normalización como una técnica de diseño de bases de datos, sino
+                        como una etapa posterior a la correspondencia entre el esquema conceptual y
+                        el esquema lógico, que elimine las dependencias entre atributos no deseadas.
+                    </p>
+                </div>
+
+
+            </section>
+            <section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+                <div class="r-stack">
+                    <div data-id="box1" style="background: cyan; width: 300px; height: 300px; border-radius: 200px;">
+                    </div>
+                    <div data-id="box2" style="background: magenta; width: 200px; height: 200px; border-radius: 200px;">
+                    </div>
+                    <div data-id="box3" style="background: yellow; width: 100px; height: 100px; border-radius: 200px;">
+                    </div>
+                </div>
+                <h2 style="margin-top: 20px;">Metodología de diseño</h2>
+                <p>
+                    Pasos a seguir para obtener un conjunto
+                    de tablas a partir del esquema conceptual.
+                </p>
+            </section>
+            <section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+                <div>
+                    <p>
+                    <ul>
+                        <li>
+                            <p>
+                                A cada tabla se le dará un nombre,
+                                y el nombre de sus atributos aparecerá, a continuación, entre paréntesis. </p>
+
+                            <p> El atributo o atributos que forman la clave primaria se subrayarán. </p>
+
+                            <p> Las claves ajenas, mecanismo que se utiliza para representar las relaciones entre
+                                entidades
+                                en el modelo relacional, se especificarán aparte indicando la tabla a la que hacen
+                                referencia. </p>
+                            <p>A este proceso se le denomina esquema</p>
+                        </li>
+                        </p>
+                    </ul>
+                </div>
+            </section>
+
+            <section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+                <section>
+                    <div>
+                        <h3>Ejemplo:</h3>
+                        <h4>Entidad fuerte con atributos</h4>
+                        <p><strong>
+                                <p>
+                                    Datos de interés de los libros de una biblioteca:
+                                </p>
+                            </strong>
+                            título (formado por un título principal y el subtítulo),
+                            ISBN, editorial, autores, idioma en que está escrito y
+                            ediciones (cada edición tiene un número y se ha publicado en un año).
+                        </p>
+                    </div>
+                </section>
+                <section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+
+                    <div>
+                        <p>
+                            <img src="../../assets/myimg/u3/efa.png" alt="E-efa" width="500px">
+                        </p>
+                        <p>
+                            <strong>
+                                El esquema lógico correspondiente es el siguiente:
+                            </strong>
+                        </p>
+
+                        <p>
+                            LIBRO( isbn, título_principal, subtítulo, editorial,
+                            AUTOR( autor ), idioma, EDICIÓN( número, año ) )
+                        </p>
+                    </div>
+                </section>
+                <section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+
+                    <div>
+                        <p>
+                        <ol>
+                            <li>En el esquema lógico se debe crear una tabla para cada entidad fuerte,
+                                incluyendo todos sus atributos simples con cardinalidad máxima "1". </li>
+                            <li>De los atributos compuestos con cardinalidad máxima "1", incluir sólo sus componentes.
+                            </li>
+                            <li>Cada atributo con cardinalidad máxima "n" se incluirá como una tabla dentro
+                                de la tabla correspondiente a la entidad.</li>
+
+                        </ol>
+                        </p>
+                    </div>
+                </section>
+
+                <section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+
+                    <div>
+                        <p>
+                        <ol start="4">
+                            <li>Si el atributo es simple, la tabla interna
+                                tendrá una sola columna; si el atributo es compuesto, la tabla interna tendrá
+                                tantas columnas como componentes tenga éste.</li>
+                            <li>Cada uno de los identificadores de la entidad será una clave candidata.</li>
+                            <li>De entre las claves candidatas hay que escoger la clave primaria; el resto serán
+                                claves alternativas.</li>
+                        </ol>
+                        </p>
+                    </div>
+                </section>
+                <section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+                    <div>
+                        <P>Para escoger la clave primaria entre las claves candidatas
+                            se puede seguir las siguientes indicaciones:</P>
+                        <ol>
+                            <li>Escoger la clave candidata que tenga menos atributos.</li>
+                            <li>Escoger la clave candidata cuyos valores no tengan probabilidad de cambiar
+                                en el futuro.</li>
+                            <li>Escoger la clave candidata cuyos valores no tengan probabilidad de perder
+                                la unicidad en el futuro.</li>
+                            <li>Escoger la clave candidata con el mínimo número de caracteres (si es de
+                                tipo cadena).</li>
+                            <li>Escoger la clave candidata más fácil de utilizar desde el punto de vista
+                                de los usuarios.</li>
+                        </ol>
+                    </div>
+                </section>
+
+                <section data-background-gradient="linear-gradient(to bottom, #44578e, #74c2cc)" id="gradient-bg">
+
+                    <div>
+                        <h4>Entidades débiles</h4>
+                        <ol>
+                            <li>Se crea una tabla para cada entidad débil, teniendo en cuenta todos sus atributos.
+                            </li>
+                            <li>Una entidad débil participa en una relación con la entidad fuerte de la
+                                que depende y la cardinalidad con la que participa será siempre «(1,1)»:
+                                cada ocurrencia de la entidad débil se relaciona con una y sólo una ocurrencia de la
+                                entidad fuerte, de la que necesita para identificarse.</li>
+
+                        </ol>
+
+
+                        <section data-background-gradient="linear-gradient(to bottom, #44578e, #74c2cc)"
+                            id="gradient-bg">
+
+                            <div>
+                                <p>
+                                <ol start="3">
+                                    <li>
+                                        Por el hecho de participar de este modo en la relación y por ser débil, a la
+                                        tabla que le
+                                        corresponde se le debe añadir una clave ajena a la tabla de la entidad fuerte de
+                                        la que
+                                        depende.
+                                    </li>
+                                    <li>
+                                        Para ello, se incluye la clave primaria de la tabla que representa a la entidad
+                                        fuerte (padre) en la nueva tabla creada para la entidad débil.
+                                    </li>
+                                    <li>
+                                        Se debe determinar la clave primaria de la nueva tabla.
+                                    </li>
+                                </ol>
+                                </p>
+                            </div>
+                        </section>
+
+
+                        <section data-background-gradient="linear-gradient(to bottom, #44578e, #74c2cc)"
+                            id="gradient-bg">
+
+                            <div>
+                                <p>
+                                    <img src="../../assets/myimg/u3/ede.png" alt="E-ede" width="500px">
+                                </p>
+                                <p>
+                                    <strong>
+                                        El esquema lógico correspondiente es el siguiente:
+                                    </strong>
+                                </p>
+
+                                <p>
+                                    DEPARTAMENTO(num_depto, nombre, presupuesto)
+                                    DEPARTAMENTO.nombre es una clave alternativa
+                                    EMPLEADO(num_emp, num_depto, nombre, fecha_ingreso)
+                                    EMPLEADO.num_depto es una clave ajena a DEPARTAMENTO
+                                </p>
+                            </div>
+                        </section>
+                        <section data-background-gradient="linear-gradient(to bottom, #44578e, #74c2cc)"
+                            id="gradient-bg">
+
+                            <div>
+                                <p>Relaciones binarias </p>
+                                Según sean las cardinalidades máximas,
+                                las relaciones binarias se clasifican como se especifica a continuación:
+                                <ol>
+                                    <li><strong>Uno a uno:</strong> ambas entidades participan con cardinalidad máxima
+                                        1. Si una participa de forma opcional y la otra lo hace de manera obligatoria,
+                                        esta última es considerada la entidad hija, mientras que la primera es la
+                                        entidad madre.</li>
+                                    <li><strong>Uno a muchos:</strong> una entidad participa con cardinalidad máxima 1
+                                        (será la entidad hija) mientras que la otra lo hace con cardinalidad máxima "n"
+                                        (será la entidad madre).</li>
+                                </ol>
+                            </div>
+                        </section>
+                        <section>
+                            <div>
+                                <ol start="3">
+                                    <li><strong>Muchos a muchos:</strong>ambas entidades participan con cardinalidad
+                                        máxima "n".</li>
+                                </ol>
+                                <p>En función del tipo de relación, hay distintas posibilidades para representarlas
+                                    en el esquema lógico.</p>
+                            </div>
+                        </section>
+
+
+                        <section data-background-gradient="linear-gradient(to bottom, #44578e, #74c2cc)"
+                            id="gradient-bg">
+                            <div>
+                                <p><strong>
+                                        Relaciones binarias uno a uno
+                                    </strong></p>
+                                <img src="../../assets/myimg/u3/ruue.png" alt="">
+                            </div>
+                            <p>A continuación, tres posibles esquemas lógicos correspondientes
+                                a este diagrama:</p>
+                        </section>
+                        <section>
+                            <ol>
+                                <li>
+                                    Puesto que la entidad de los vehículos participa de forma obligatoria en
+                                    la relación, puede considerarse entidad hija (todas sus ocurrencias están
+                                    relacionadas con algún empleado), introduciéndose en ella la relación:
+                                </li>
+                            </ol>
+                            <p>
+                                EMPLEADO(codemp, nombre)
+                                VEHÍCULO(matrícula, modelo, codemp, fecha_inicio)
+                                VEHÍCULO.codemp es una clave ajena a EMPLEADO, no acepta
+                                nulos
+                                VEHÍCULO.codemp es también una clave alternativa
+                            </p>
+                        </section>
+                        <section data-background-gradient="linear-gradient(to bottom, #44578e, #74c2cc)"
+                            id="gradient-bg">
+                            <ol start="2">
+                                <li>Aunque la entidad de los vehículos es la entidad hija, al ser una relación
+                                    uno a uno, también es posible incluir la relación en la entidad de los empleados.
+                                    Esto puede ser conveniente cuando se sabe que los accesos
+                                    de una tabla a la otra se van a hacer siempre en la misma dirección, de
+                                    EMPLEADO a VEHÍCULO:</li>
+                            </ol>
+                            <p>
+                                VEHÍCULO(matrícula, modelo)
+                                EMPLEADO(codemp, nombre, matrícula, fecha_inicio)
+                                EMPLEADO.matrícula es una clave ajena a VEHÍCULO, acepta
+                                nulos
+                                EMPLEADO.matrícula es también una clave alternativa
+                                EMPLEADO.matrícula, EMPLEADO.fecha_inicio son ambas nulas
+                                o no nulas a la vez
+                            </p>
+                        </section>
+                        <section>
+                            <strong>NOTA:</strong>
+                            El hecho de participar de manera opcional en la relación,
+                            la clave ajena y el atributo de la relación deben aceptar nulos, y que
+                            ambos deben ser nulos o no nulos a la vez. Esta restricción se puede
+                            expresar sin ambigüedad en forma de predicado SQL:
+                            <p>
+                                (EMPLEADO.matrícula IS NULL AND EMPLEADO.fecha_inicio
+                                IS NULL)
+                                OR (EMPLEADO.matrícula IS NOT NULL AND EMPLEADO.fecha_inicio
+                                IS NOT NULL)
+                            </p>
+                        </section>
+                        <section>
+                            <div>
+                                <p></p>
+                                <ol start="3">
+                                    <li>Otro modo de representar la relación es mediante una tabla aparte:</li>
+                                </ol>
+                            </div>
+                            <p>
+                                EMPLEADO(codemp, nombre)
+                                VEHÍCULO(matrícula, modelo)
+                                CONDUCE(matrícula, codemp, fecha_inicio)
+                                CONDUCE.matrícula es una clave ajena a VEHÍCULO, no acepta
+                                nulos
+                                CONDUCE.codemp es una clave ajena a EMPLEADO, no acepta
+                                nulos
+                                CONDUCE.codemp es también una clave alternativa
+                            </p>
+                        </section>
+                        <section>
+                            <div>
+                                <p><strong>Relación muchos a muchos.</strong></p>
+                                <img src="../../assets/myimg/u3/mme.png" alt="mme">
+                            </div>
+                            <p>
+                                MÉDICO(codmed, nombre)
+                                PACIENTE(codpac, nombre)
+                                CITA(codmed, codpac, fecha, hora) ¡falta escoger la clave
+                                primaria!
+                                CITA.codmed es una clave ajena a MÉDICO, no acepta nulos
+                                CITA.codpac es una clave ajena a PACIENTE, no acepta nulos
+                            </p>
+                        </section>
+                        <section>
+                            <div>
+
+
+
+
+                                <p>Para escoger la clave primaria de la tabla CITA se deben buscar antes las
+                                    claves candidatas, que dependerán del significado de la relación:</p>
+                                <ul>
+                                    <li>(codmed, fecha, hora) es una clave candidata, porque un médico no
+                                        puede tener más de una cita el mismo día a la misma hora.</li>
+                                    <li>(codpac, fecha, hora) es una clave candidata, porque un paciente no
+                                        puede tener más de una cita el mismo día a la misma hora.</li>
+                                </ul>
+                                <p>Nótese que (codmed, codpac) no es una clave candidata, ya que un mismo
+                                    paciente puede tener varias citas con un mismo médico.</p>
+                            </div>
+                        </section>
+                        <section>
+                            <div>
+                                <p>
+                                    <stong>Jerarquías de generalización</stong>
+                                </p>
+                            </div>
+                            <div>
+                                <p>
+                                    Se llama entidad madre, a la entidad genérica, y entidades
+                                    hijas, a las subentidades.
+                                <p>
+                                    Hay tres opciones distintas para representar las
+                                    jerarquías.
+                                </p>
+                                La más adecuada se hará en función de su tipo
+                                <ul>
+                                </ul>
+                                <li>Total o Parcial
+                                </li>
+                                <li>Exclusiva o Superpuesta
+                                </li>
+                                </p>
+                            </div>
+                        </section>
+                        <section>
+                            <div>
+                                <ol>
+                                    <li>
+                                        <ul>
+                                            <li>Crear una tabla por cada entidad (madre e hijas).
+                                            </li>
+                                            <li>
+                                                Las tablas de las entidades hijas heredan como clave primaria la clave
+                                                primaria
+                                                de la entidad madre.
+                                            </li>
+                                            <li>
+                                                La clave primaria de las hijas, es una clave ajena a la
+                                                entidad madre.
+                                            </li>
+                                            <li>
+                                                Esta representación se puede hacer para cualquier tipo de jerarquía,
+                                                ya sea total o parcial, o exclusiva o superpuesta.
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                </ol>
+                            </div>
+                        </section>
+
+
+                        <section>
+                            <div>
+                                <ol start="2">
+                                    <li>
+                                        <ul>
+                                            <li>Crear una tabla por cada entidad hija, heredando cada una los atributos
+                                                de la entidad madre.
+                                            </li>Esta representación sólo puede hacerse para
+                                            jerarquías totales y exclusivas.
+                                            
+                                        </ul>
+                                    </li>
+                                </ol>
+                            </div>
+                        </section>
+                        <section>
+                            <div>
+                                <ol>
+                                    <li>
+                                        <ul>
+                                            <li>Integrar todas las entidades en una sola tabla, incluyendo en ella los
+                                                atributos
+                                                de la entidad madre, los atributos de todas las hijas y un atributo
+                                                discriminativo para indicar el subconjunto al cual pertenece la entidad
+                                                en consideración. </li>
+                                            <li>Esta representación se puede utilizar para cualquier tipo
+                                                de jerarquía.</li>
+                                            <li>Si la jerarquía es superpuesta, el atributo discriminativo
+                                                deberá ser multievaluado o bien se deberá incluir uno de estos atributos
+                                                por cada subentidad.</li>
+                                        </ul>
+                                    </li>
+                                </ol>
+                            </div>
+                        </section>
+                        <section>
+                            <div><img src="../../assets/myimg/u3/jge.png" alt=""></div>
+                            <strong>
+                                <p>Se muestran los tres posibles esquemas lógicos correspondientes
+                                    al diagrama anterior.</p>
+                            </strong>
+                        </section>
+                        <section>
+                            <div>
+                                <li>PÓLIZA(número, fecha_ini, fecha_fin)
+                                    PÓLIZA_VIDA(número, BENEFICIARIO(dni, nombre, fecha_nacim))
+                                    PÓLIZA_VIDA.número es una clave ajena a PÓLIZA
+                                    PÓLIZA_AUTOMÓVIL(número, matrícula)
+                                    PÓLIZA_AUTOMÓVIL.matrícula es una clave alternativa
+                                    PÓLIZA_AUTOMÓVIL.número es una clave ajena a PÓLIZA
+                                    PÓLIZA_VIVIENDA(número, domicilio)
+                                    PÓLIZA_VIVIENDA.número es una clave ajena a PÓLIZA</li>
+                            </div>
+                        </section>
+                        <section>
+                            <div>
+                                <ol start="2">
+                                    <li>PÓLIZA_VIDA(número, fecha_ini, fecha_fin, BENEFICIARIO(dni, nombre,
+                                        fecha_nacim))
+                                        PÓLIZA_AUTOMÓVIL(número, fecha_ini, fecha_fin, matrícula)
+                                        PÓLIZA_AUTOMÓVIL.matrícula es una clave alternativa
+                                        PÓLIZA_VIVIENDA(número, fecha_ini, fecha_fin, domicilio)</li>
+                                </ol>
+                            </div>
+                        </section>
+                        <section>
+                            <div>
+                                <ol start="3">
+                                    <li>PÓLIZA(número, fecha_ini, fecha_fin, tipo, BENEFICIARIO(dni,
+                                        nombre, fecha_nacim), matrícula, domicilio)
+                                        PÓLIZA.tipo ∈ {’vida’,’automóvil’,’vivienda’} 􀀁 atributo discriminativo
+                                        PÓLIZA.matrícula es una clave alternativa
+                                        PÓLIZA.matrícula, PÓLIZA.domicilio aceptan nulos</li>
+                                </ol>
+                            </div>
+                        </section>
+                        <section>
+                            <div>
+                                <p>
+                                    Obtenidas las tablas con sus atributos, claves primarias, claves
+                                    alternativas y claves ajenas, deben normalizarse.
+                                </p>
+                                <p>
+                                    La <a href="./normalizacion.html">normalización</a> 
+                                     garantiza que el esquema resultante
+                                    se encuentra más próximo al modelo de la empresa, que es consistente
+                                    y que tiene la mínima redundancia y la máxima estabilidad.
+                                </p>
+                            </div>
+                        </section>
+                        <!--
+
+
+
+
+                        <section data-auto-animate>
+                            <h2 data-id="code-title">Scroll triggered code highlights</h2>
+                            <pre data-id="code-animation"><code class="hljs javascript" data-trim data-line-numbers="|4,8-11|17|22-24"><script type="text/template">
+						import React, { useState } from 'react';
+
+						function Example() {
+						  const [count, setCount] = useState(0);
+
+						  return (
+						    <div>
+						      <p>You clicked {count} times</p>
+						      <button onClick={() => setCount(count + 1)}>
+						        Click me
+						      </button>
+						    </div>
+						  );
+						}
+
+						function SecondExample() {
+						  const [count, setCount] = useState(0);
+
+						  return (
+						    <div>
+						      <p>You clicked {count} times</p>
+						      <button onClick={() => setCount(count + 1)}>
+						        Click me
+						      </button>
+						    </div>
+						  );
+						}
+					</script></code></pre>
+                        </section>
+                        <section class="stack">
+                            <section data-background="https://static.slid.es/reveal/image-placeholder.png"
+                                id="image-bg">
+                                <h2>Image Backgrounds</h2>
+                                <pre><code class="hljs html">&lt;section data-background="image.png"&gt;</code></pre>
+                            </section>
+                            <section
+                                data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm">
+                                <h2>Video background</h2>
+                            </section>
+                        </section>
+                        <section>
+                            <h2>The end</h2>
+                        </section>
+                        -->
+
+                    </div>
+
+        </div>
+
+        <script src="../../dist/reveal.js"></script>
+        <script src="../../plugin/notes/notes.js"></script>
+        <script src="../../plugin/markdown/markdown.js"></script>
+        <script src="../../plugin/highlight/highlight.js"></script>
+        <script>
+            Reveal.initialize({
+                view: 'reader',
+                hash: true,
+
+                plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+            });
+        </script>
+
+</body>
+
+</html>
